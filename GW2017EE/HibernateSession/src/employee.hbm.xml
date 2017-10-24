@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.auribises.Employee" table="EMPLOYEE">
+      <id name="id" column="EID">
+         <generator class="increment"/>
+      </id>
+      <property name="name" column="ENAME"/>
+      <property name="phone" column="EPHONE"/>
+      <property name="address" column="EADDRESS"/>
+      <property name="salary" column="ESALARY"/>
+   </class>
+</hibernate-mapping>

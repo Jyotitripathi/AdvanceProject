@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+<!--    <bean id="adrs" class="com.auribises.Address" init-method="myInit" destroy-method="myDestroy">
+       <property name="adrsLine" value="BRS Nagar"/>
+       <property name="city" value="Ludhiana"/>
+       <property name="state" value="Punjab"/>
+       <property name="zipCode" value="141002"/>
+   </bean>
+   
+   <bean class="com.auribises.MyProcessor"/> -->
+   
+   <!--  <bean id="pers" class="com.auribises.Person">
+       <property name="id" value="333"/>
+       <property name="name" value="Kevin"/>
+       <property name="age" value="20"/>
+       <property name="address" ref="adrs"/>
+   </bean>
+   
+   <bean id="adrs1" class="com.auribises.Address">
+       <property name="adrsLine" value="Shastri Nagar"/>
+       <property name="city" value="Ludhiana"/>
+       <property name="state" value="Punjab"/>
+       <property name="zipCode" value="141002"/>
+   </bean>
+   
+   <bean id="pers1" class="com.auribises.Person">
+       <property name="id" value="777"/>
+       <property name="name" value="Fionna"/>
+       <property name="age" value="27"/>
+       <constructor-arg ref="adrs1"/>
+   </bean>
+   
+     <bean id="mgr" class="com.auribises.Manager">
+       <property name="name" value="John"/>
+       <property name="email" value="john@example.com"/>
+       <property name="salary" value="70000"/>
+       <property name="certificates">
+       	<list>
+       		<value>AWS</value>
+       		<value>OCJP</value>
+       		<value>CCNA</value>
+       	</list>
+       </property>
+   </bean>
+   
+   <bean id="fRef" class="com.auribises.Father">
+       <property name="fname" value="John"/>
+       <property name="lname" value="Watson"/>
+       <property name="wealth" value="50000"/>
+   </bean>
+   
+   <bean id="cRef" class="com.auribises.Child" parent="fRef">
+       <property name="fname" value="George"/>
+       <property name="hobby" value="Music"/>
+       <property name="vehicles" value="2"/>
+   </bean> -->
+   
+   <!-- <bean id="fruit" class="com.auribises.Fruit"/>
+   <bean id="seed" class="com.auribises.Seed"/>
+
+   <context:annotation-config/> -->
+   
+   <bean id="emp" class="com.auribises.Employee">
+       <property name="eid" value="101"/>
+       <property name="ename" value="John Watson"/>
+   </bean>
+   
+   
+    <bean id="befAdv" class="com.auribises.BeforeAdvice"/>
+    <bean id="aftAdv" class="com.auribises.AfterAdvice"/>
+    
+     <bean id="empProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+       <property name="target" ref="emp"/>
+       <property name="interceptorNames">
+       	<list>
+       		<value>befAdv</value>
+       		<value>aftAdv</value>
+       	</list>	
+       </property>
+    </bean>
+   
+   
+</beans>
+
+
+
+
+
+
+
+
